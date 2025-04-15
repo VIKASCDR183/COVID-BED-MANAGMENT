@@ -1,0 +1,33 @@
+{% extends 'baselogin.html' %}
+{% block title %}Patient Details{% endblock title %}
+{% block form %}
+
+<div class="row">
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+    <br><br>
+    <h1>Patient Details</h1>
+    <div class="card p-3">
+      {% if data %}
+      <table class="table table-dark">
+        <thead>
+          <tr><th>SRF ID</th><td>{{ data.srfid }}</td></tr>
+          <tr><th>Bed Type</th><td>{{ data.bedtype }}</td></tr>
+          <tr><th>Hospital Code</th><td>{{ data.hcode }}</td></tr>
+          <tr><th>SPO2</th><td>{{ data.spo2 }}</td></tr>
+          <tr><th>Name</th><td>{{ data.pname }}</td></tr>
+          <tr><th>Phone</th><td>{{ data.pphone }}</td></tr>
+          <tr><th>Address</th><td>{{ data.paddress }}</td></tr>
+        </thead>
+      </table>
+      {% else %}
+        <p>No patient data found.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-md-4"></div>
+</div>
+
+{% endblock form %}
